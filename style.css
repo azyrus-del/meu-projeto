@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1A1A2E;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+p, label {
+    color: #A8A8A8;
+}
+
+/* Menu Principal */
+.menu-top {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2E2E3A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-top a {
+    color: #A8A8A8;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-top a:hover {
+    color: #FFFFFF;
+}
+
+/* Containers de Formulário e Tabela */
+.box { 
+    width: 400px; 
+    margin: 50px auto; 
+    padding: 40px 30px; 
+    background-color: #2E2E3A;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box; 
+}
+
+.tabela-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #2E2E3A;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Inputs e Selects */
+.box input, .box select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 20px 0;
+    border: 2px solid #333333;
+    border-radius: 30px;
+    background: #1A1A2E;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.box input:focus, .box select:focus {
+    outline: none;
+    border-color: #FF7B54;
+}
+
+/* Para placeholders */
+::placeholder {
+    color: #A8A8A8;
+    opacity: 1;
+}
+
+/* Labels dentro do Box */
+.box label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Botões */
+.box button, .btn-voltar {
+    width: 100%;
+    background-color: #FF7B54;
+    color: #FFFFFF;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.box button:hover, .btn-voltar:hover {
+    background-color: #E56B44;
+}
+
+/* Botão voltar específico com cor diferente (opcional) */
+.btn-voltar {
+    margin-top: 20px;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #1A1A2E;
+    border-radius: 10px;
+    overflow: hidden; /* Para manter as bordas arredondadas */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333333;
+}
+
+th {
+    background-color: #FF7B54;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+td {
+    color: #A8A8A8;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+/* Pequenos ajustes para index.php */
+.box a button {
+    margin-bottom: 15px;
+}
+
+/* Dashboard Grid - index.php */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.card-item {
+    background-color: #2E2E3A;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+}
+
+.card-item .icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.card-item h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.card-item button {
+    width: 100%;
+    background-color: #FF7B54;
+    color: #FFFFFF;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.card-item button:hover {
+    background-color: #E56B44;
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+}
