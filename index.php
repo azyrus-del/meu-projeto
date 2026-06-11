@@ -15,7 +15,7 @@
         <a href="item_venda_exibir.php">Itens de Venda</a>
     </div>
 
-    <h2 style="margin-top: 40px;">Bem-vindo à Agadetec</h2>
+    <h2 style="margin-top: 40px;">Agadetec - Pedro Pereira - Pedro Alves</h2>
     <p style="text-align: center;">Escolha uma das opções para gerenciar o sistema:</p>
 
     <div class="dashboard-grid">
