@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 require_once 'conexao.php';
 
 // Uso de JOIN para buscar os dados associados
@@ -16,11 +17,21 @@ $resultado = $conn->query($sql);
 </head>
 <body>
     <div class="menu-top">
-        <a href="index.php">Início</a>
-        <a href="cliente_exibir.php">Clientes</a>
-        <a href="produto_exibir.php">Produtos</a>
-        <a href="venda_exibir.php">Vendas</a>
-        <a href="item_venda_exibir.php">Itens de Venda</a>
+        <div class="menu-links">
+            <a href="index.php">Início</a>
+            <a href="cliente_exibir.php">Clientes</a>
+            <a href="produto_exibir.php">Produtos</a>
+            <a href="venda_exibir.php">Vendas</a>
+            <a href="item_venda_exibir.php">Itens de Venda</a>
+        </div>
+        <div class="menu-user">
+            <span class="navbar-avatar" style="background-color: <?php echo $_SESSION['perfil_cor']; ?>;">
+                <?php echo $_SESSION['perfil_emoji']; ?>
+            </span>
+            <span>Olá, <strong><?php echo htmlspecialchars($_SESSION['perfil_nome']); ?></strong></span>
+            <a href="perfis.php" class="btn-trocar-perfil">Trocar Perfil</a>
+            <a href="logout.php" class="btn-logout">Sair</a>
+        </div>
     </div>
 
     <div class="tabela-container">

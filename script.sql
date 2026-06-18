@@ -1,6 +1,6 @@
--- Criação e seleção do banco de dados
-CREATE DATABASE IF NOT EXISTS Sistema2;
-USE Sistema2;
+-- Script de criação das tabelas
+-- NOTA: Crie o banco de dados pelo painel de controle da hospedagem
+-- e selecione-o no phpMyAdmin antes de executar este script.
 
 -- Tabela de Clientes com Auto-incremento
 CREATE TABLE IF NOT EXISTS clientes (
@@ -36,26 +36,3 @@ CREATE TABLE IF NOT EXISTS itens_venda (
     CONSTRAINT fk_venda_item FOREIGN KEY (id_venda) REFERENCES vendas(id_venda),
     CONSTRAINT fk_produto_item FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
-
--- Trigger para cálculo automático do vlr_item
-DELIMITER //
-
-CREATE TRIGGER trg_calcula_vlr_item_insert
-BEFORE INSERT ON itens_venda
-FOR EACH ROW
-BEGIN
-    DECLARE preco_unitario DECIMAL(10,2);
-    SELECT vlr_unit INTO preco_unitario FROM produtos WHERE id_produto = NEW.id_produto;
-    SET NEW.vlr_item = preco_unitario * NEW.qtd;
-END; //
-
-CREATE TRIGGER trg_calcula_vlr_item_update
-BEFORE UPDATE ON itens_venda
-FOR EACH ROW
-BEGIN
-    DECLARE preco_unitario DECIMAL(10,2);
-    SELECT vlr_unit INTO preco_unitario FROM produtos WHERE id_produto = NEW.id_produto;
-    SET NEW.vlr_item = preco_unitario * NEW.qtd;
-END; //
-
-DELIMITER ;
